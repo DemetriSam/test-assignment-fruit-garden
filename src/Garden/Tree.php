@@ -2,11 +2,13 @@
 
 namespace DemetriSam\FruitGarden\Garden;
 
-class Tree
+use DemetriSam\FruitGarden\FruitStorage;
+
+class Tree implements FruitStorage
 {
     public $id;
     public $species;
-    public $fruits;
+    public $fruits = [];
 
     public function __construct($species, $fruitConfig, $productivity, $id)
     {
@@ -20,5 +22,15 @@ class Tree
         }
 
         $this->fruits = $fruits;
+    }
+
+    public function push($fruit)
+    {
+        array_push($this->fruits, $fruit);
+    }
+
+    public function pop()
+    {
+        return array_pop($this->fruits);
     }
 }

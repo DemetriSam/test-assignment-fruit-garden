@@ -32,14 +32,16 @@ return [
     'containers' => [
         [
             'name' => 'Контейнер для яблок',
+            'description' => 'яблоки',
             'condition' => fn ($fruit) => $fruit->name === 'Яблоко',
         ],
         [
             'name' => 'Контейнер для груш',
+            'description' => 'груши',
             'condition' => fn ($fruit) => $fruit->name === 'Груша',
         ],
         // [
-        //     'name' => 'Контейнер для фруктов нарушающих законы физики',
+        //     'name' => 'Контейнер для летающих фруктов',
         //     'condition' => fn($fruit) => $fruit->weight < 0,
         // ], 
     ]

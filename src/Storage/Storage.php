@@ -11,7 +11,7 @@ class Storage
         $containers = [];
 
         foreach ($config as $container) {
-            $containers[] = new Container($container['name'], $container['condition']);
+            $containers[] = new Container($container['name'], $container['description'], $container['condition']);
         }
 
         $this->containers = $containers;
