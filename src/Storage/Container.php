@@ -24,6 +24,16 @@ class Container implements FruitStorage
         return $condition($fruit);
     }
 
+    public function getQuantity()
+    {
+        return count($this->fruits);
+    }
+
+    public function getTotalWeight()
+    {
+        return array_reduce($this->fruits, fn ($sum, $fruit) => $sum + $fruit->weight, 0);
+    }
+
     public function push($fruit)
     {
         array_push($this->fruits, $fruit);
