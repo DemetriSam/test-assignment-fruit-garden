@@ -1,9 +1,7 @@
 {
     "name": "demetri-sam/fruit-garden",
     "type": "project",
-    "require": {
-        "illuminate/collections": "^10.2"
-    },
+    "require": {},
     "require-dev": {
         "phpunit/phpunit": "^10.0"
     },

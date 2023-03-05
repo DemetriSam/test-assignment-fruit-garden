@@ -5,7 +5,6 @@ namespace DemetriSam\FruitGarden\Tests;
 use DemetriSam\FruitGarden\Garden\Garden;
 use DemetriSam\FruitGarden\Storage\Storage;
 use DemetriSam\FruitGarden\Harvester;
-use DemetriSam\FruitGarden\Reporter;
 
 use PHPUnit\Framework\TestCase;
 
