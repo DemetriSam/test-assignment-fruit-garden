@@ -6,11 +6,11 @@ use DemetriSam\FruitGarden\FruitStorage;
 
 class Tree implements FruitStorage
 {
-    public $id;
-    public $species;
-    public $fruits = [];
+    public int $id;
+    public string $species;
+    public array $fruits = [];
 
-    public function __construct($species, $fruitConfig, $productivity, $id)
+    public function __construct(string $species, array $fruitConfig, array $productivity, int $id)
     {
         $this->id = $id;
         $this->species = $species;
@@ -24,12 +24,12 @@ class Tree implements FruitStorage
         $this->fruits = $fruits;
     }
 
-    public function push($fruit)
+    public function push(Fruit $fruit): void
     {
         array_push($this->fruits, $fruit);
     }
 
-    public function pop()
+    public function pop(): Fruit
     {
         return array_pop($this->fruits);
     }

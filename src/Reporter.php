@@ -4,7 +4,7 @@ namespace DemetriSam\FruitGarden;
 
 class Reporter
 {
-    public function report($containers)
+    public function report(array $containers): void
     {
         echo 'Собрано:';
         echo PHP_EOL;

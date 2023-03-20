@@ -4,10 +4,10 @@ namespace DemetriSam\FruitGarden\Garden;
 
 class Fruit
 {
-    public $name;
-    public $weight;
+    public string $name;
+    public int $weight;
 
-    public function __construct($config)
+    public function __construct(array $config)
     {
         $this->name = $config['name'];
         $this->weight = rand($config['weight']['min'], $config['weight']['max']);

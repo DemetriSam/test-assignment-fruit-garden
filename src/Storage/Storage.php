@@ -4,9 +4,9 @@ namespace DemetriSam\FruitGarden\Storage;
 
 class Storage
 {
-    public $containers;
+    public array $containers;
 
-    public function __construct($config)
+    public function __construct(array $config)
     {
         $containers = [];
 

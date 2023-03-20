@@ -2,44 +2,46 @@
 
 namespace DemetriSam\FruitGarden\Storage;
 
+use Closure;
 use DemetriSam\FruitGarden\FruitStorage;
+use DemetriSam\FruitGarden\Garden\Fruit;
 
 class Container implements FruitStorage
 {
-    public $name;
-    public $description;
-    public $condition;
-    public $fruits = [];
+    public string $name;
+    public string $description;
+    public Closure $condition;
+    public array $fruits = [];
 
-    public function __construct($name, $description, $condition)
+    public function __construct(string $name, string $description, Closure $condition)
     {
         $this->name = $name;
         $this->description = $description;
         $this->condition = $condition;
     }
 
-    public function isFruitOK($fruit)
+    public function isFruitOK(Fruit $fruit): bool
     {
         $condition = $this->condition;
         return $condition($fruit);
     }
 
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return count($this->fruits);
     }
 
-    public function getTotalWeight()
+    public function getTotalWeight(): float
     {
         return array_reduce($this->fruits, fn ($sum, $fruit) => $sum + $fruit->weight, 0);
     }
 
-    public function push($fruit)
+    public function push(Fruit $fruit): void
     {
         array_push($this->fruits, $fruit);
     }
 
-    public function pop()
+    public function pop(): Fruit
     {
         return array_pop($this->fruits);
     }

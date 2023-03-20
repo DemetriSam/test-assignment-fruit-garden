@@ -2,8 +2,10 @@
 
 namespace DemetriSam\FruitGarden;
 
+use DemetriSam\FruitGarden\Garden\Fruit;
+
 interface FruitStorage
 {
-    public function push($fruit);
-    public function pop();
+    public function push(Fruit $fruit): void;
+    public function pop(): Fruit;
 }

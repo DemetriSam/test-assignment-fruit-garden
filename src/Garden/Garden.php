@@ -4,9 +4,9 @@ namespace DemetriSam\FruitGarden\Garden;
 
 class Garden
 {
-    public $trees;
+    public array $trees;
 
-    public function __construct($seeds)
+    public function __construct(array $seeds)
     {
         foreach ($seeds as $seed) {
             $species = $seed['species'];
